@@ -1,11 +1,8 @@
-
 import SingleMealsData from "./Components/SingleMealsData/SingleMealsData";
 
 export const metadata = {
   title: "Home",
 };
-
-
 
 export const getMeals = async () => {
   const res = await fetch(
@@ -17,7 +14,6 @@ export const getMeals = async () => {
 
 export default async function Home() {
   const meals = await getMeals();
-
 
   return (
     <div>

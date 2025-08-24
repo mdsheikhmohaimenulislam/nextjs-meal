@@ -25,11 +25,12 @@ const Navbar = () => {
               </svg>
             </div>
           </div>
-          <a className="btn btn-ghost text-xl">Meal</a>
+          <a className="btn btn-ghost text-xl">Meal House</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-10">
             <Link href="/">Home</Link>
+            <Link href="/SearchMeals">Meals</Link>
             <Link href="/Posts">Post</Link>
             <Link href="/about">About</Link>
           </ul>

@@ -3,6 +3,9 @@ import MealSearchInput from "./components/MealSearchInput";
 
 // Server components....
 
+
+
+
 const SearchMeals = async ({ searchParams }) => {
   const query = await searchParams;
 

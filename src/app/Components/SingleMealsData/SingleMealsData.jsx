@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const SingleMealsData = ({ meal }) => {
@@ -13,7 +14,9 @@ const SingleMealsData = ({ meal }) => {
           <h2 className="card-title">{meal.strCategory}</h2>
           {/* <p>{meal.strCategoryDescription}</p> */}
         </div>
-            <button className="btn btn-primary">Buy Now</button>
+      
+            <button className="btn btn-primary w-full">Buy Now</button>
+
       </div>
     </div>
   );

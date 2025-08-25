@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export const getSingleMeals = async (id) => {
@@ -38,7 +39,7 @@ const SearchMealsDetails = async ({ params }) => {
       <div className="card bg-base-100 w-96 card-lg shadow-sm">
         <div className="card p-4 shadow rounded">
           <figure>
-            <img src={meals?.strMealThumb} alt="Shoes" />
+            <Image width={641} height={641} src={meals?.strMealThumb} alt="Shoes" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{meals?.strMeal}</h2>

@@ -1,4 +1,4 @@
-import SingleMealsData from "./Components/SingleMealsData/SingleMealsData";
+import SingleMealsData from "../Components/SingleMealsData/SingleMealsData";
 
 export const metadata = {
   title: "Home",

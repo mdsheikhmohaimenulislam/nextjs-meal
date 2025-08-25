@@ -1,7 +1,12 @@
+"use client"
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const Navbar = () => {
+
+  const pathname = usePathname();
+  if(!pathname.includes("dashboard")){
   return (
     <div>
       <div className="navbar bg-base-100 shadow-sm">
@@ -42,6 +47,11 @@ const Navbar = () => {
       </div>
     </div>
   );
+  }else{
+    return <></>
+  }
+
+
 };
 
 export default Navbar;

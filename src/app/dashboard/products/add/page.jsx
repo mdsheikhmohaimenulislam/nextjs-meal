@@ -1,5 +1,5 @@
 import React from 'react';
-import AddFrom from './addFromPage/page';
+import AddFrom from './components/page';
 
 const AddPage = () => {
     return (

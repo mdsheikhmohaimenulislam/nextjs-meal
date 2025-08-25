@@ -1,8 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Bounce, toast } from "react-toastify";
 
 export default function AddFrom() {
+
+   const router = useRouter();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -36,12 +40,13 @@ export default function AddFrom() {
       });
       // Reset the form
       e.target.reset();
+      router.push("/products"); // navigate to /products
     }
   };
 
   return (
     <div>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mt-20 mx-auto">
+      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
         <div className="card-body">
           <form onSubmit={handleSubmit} className="fieldset">
             <label className="label">Product name</label>

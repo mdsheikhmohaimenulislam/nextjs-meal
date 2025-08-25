@@ -4,6 +4,7 @@ import React from "react";
 const SinglePostData = ({ post }) => {
 
 
+
   return (
     <div>
       <div className="card bg-base-100 m-5 shadow-sm">

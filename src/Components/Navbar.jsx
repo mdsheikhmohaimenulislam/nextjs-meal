@@ -32,7 +32,8 @@ const Navbar = () => {
             <Link href="/">Home</Link>
             <Link href="/SearchMeals">Meals</Link>
             <Link href="/Posts">Post</Link>
-            <Link href="/about">About</Link>
+            <Link href="/products">Products</Link>
+            <Link href="/products/add">Add Products</Link>
           </ul>
         </div>
         <div className="navbar-end">

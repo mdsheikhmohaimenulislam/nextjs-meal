@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import { ToastContainer } from "react-toastify";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -31,6 +32,19 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="min-h-[calc(100vh-200px)]">{children}</main>
         <Footer />
+                {/* Toast container - only once in the app */}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
     </html>
   );

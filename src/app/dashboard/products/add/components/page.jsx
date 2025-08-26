@@ -42,6 +42,7 @@ export default function AddFrom() {
       });
       // Reset the form
       e.target.reset();
+      
       router.push("/products"); // navigate to /products
     }
   };

@@ -1,10 +1,11 @@
 "use client";
 
+import { postSingleProducts } from "@/app/actions/products/postSingleProducts";
 import { useRouter } from "next/navigation";
 import { Bounce, toast } from "react-toastify";
 
 export default function AddFrom() {
-
+// const {NEXT_PUBLIC_SERVER_ADDRESS} = process.env;
    const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -17,15 +18,16 @@ export default function AddFrom() {
     const data = Object.fromEntries(formData.entries());
 
     // data send to mongoDB
-    const res = await fetch("http://localhost:3000/api/items", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // const res = await fetch(`${NEXT_PUBLIC_SERVER_ADDRESS}/api/items`, {
+    //   method: "POST",
+    //   body: JSON.stringify(data),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
 
-    const result = await res.json();
+    // const result = await res.json();
+    const result = await postSingleProducts(data);
     if (result) {
       toast.success("Successfully Products add ", {
         position: "top-right",

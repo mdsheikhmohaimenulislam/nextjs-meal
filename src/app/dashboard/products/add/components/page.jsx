@@ -49,7 +49,7 @@ export default function AddFrom() {
 
   return (
     <div>
-      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+      <div className="card  bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
         <div className="card-body">
           <form onSubmit={handleSubmit} className="fieldset">
             <label className="label">Product name</label>

@@ -3,7 +3,7 @@ import AddFrom from './components/page';
 
 const AddPage = () => {
     return (
-        <div>
+      <div className="min-h-screen flex items-center justify-center">
             <AddFrom/>
         </div>
     );

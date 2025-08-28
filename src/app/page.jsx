@@ -1,5 +1,8 @@
 import LoginButton from "@/Components/LoginButton";
 import SingleMealsData from "../Components/SingleMealsData/SingleMealsData";
+import UserInfo from "@/Components/UserInfo";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export const metadata = {
   title: "Home",
@@ -15,6 +18,7 @@ export const getMeals = async () => {
 
 export default async function Home() {
   const meals = await getMeals();
+  const session = await getServerSession(authOptions)
 
   return (
     <div>
@@ -24,6 +28,8 @@ export default async function Home() {
         ))}
       </div>
       <LoginButton/>
+      <UserInfo/>
+      <p className="text-red-500">From client components:{JSON.stringify(session)}</p>
     </div>
   );
 }

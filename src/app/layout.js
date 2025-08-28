@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { ToastContainer } from "react-toastify";
+import NextSectionAuthProvider from "@/provider/NextSectionAuthProvider";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -28,24 +29,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
-        <Navbar />
-        <main className="min-h-[calc(100vh-200px)]">{children}</main>
-        <Footer />
-                {/* Toast container - only once in the app */}
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
-      </body>
+      <NextSectionAuthProvider>
+        <body className={`${poppins.className} antialiased`}>
+          <Navbar />
+          <main className="min-h-[calc(100vh-200px)]">{children}</main>
+          <Footer />
+          {/* Toast container - only once in the app */}
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+        </body>
+      </NextSectionAuthProvider>
     </html>
   );
 }

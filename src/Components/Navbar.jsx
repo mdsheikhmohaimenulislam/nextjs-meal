@@ -39,6 +39,7 @@ const Navbar = () => {
             <Link href="/Posts">Post</Link>
             <Link href="/products">Products</Link>
             <Link href="/products/add">Add Products</Link>
+            <Link href="/register">Register</Link>
           </ul>
         </div>
         <div className="navbar-end">

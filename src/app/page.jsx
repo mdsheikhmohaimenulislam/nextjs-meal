@@ -1,3 +1,4 @@
+import LoginButton from "@/Components/LoginButton";
 import SingleMealsData from "../Components/SingleMealsData/SingleMealsData";
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default async function Home() {
           <SingleMealsData key={index} meal={meal} />
         ))}
       </div>
+      <LoginButton/>
     </div>
   );
 }

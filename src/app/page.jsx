@@ -2,7 +2,8 @@ import LoginButton from "@/Components/LoginButton";
 import SingleMealsData from "../Components/SingleMealsData/SingleMealsData";
 import UserInfo from "@/Components/UserInfo";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
+
 
 export const metadata = {
   title: "Home",

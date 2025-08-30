@@ -3,6 +3,7 @@ import SingleMealsData from "../Components/SingleMealsData/SingleMealsData";
 import UserInfo from "@/Components/UserInfo";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
+import LogOutButton from "@/Components/LogOutButton";
 
 
 export const metadata = {
@@ -28,7 +29,9 @@ export default async function Home() {
           <SingleMealsData key={index} meal={meal} />
         ))}
       </div>
-      <LoginButton/>
+      {
+        session?.user ? (<LogOutButton/>) : (<LoginButton/>)
+      }
       <UserInfo/>
       <p className="text-red-500">From client components:{JSON.stringify(session)}</p>
     </div>

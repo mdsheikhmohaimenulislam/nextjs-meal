@@ -1,5 +1,6 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import dbConnect, { collectionNames } from "@/lib/dbConnect";
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
   providers: [
@@ -18,7 +19,9 @@ export const authOptions = {
         const { username, email } = credentials;
         // const users = await dbConnect("User").find().toArray();
         // console.log(users)
-        const user = await dbConnect(collectionNames.TEXT_USER).findOne({ Username: username });
+        const user = await dbConnect(collectionNames.TEXT_USER).findOne({
+          Username: username,
+        });
         // console.log(user)
 
         // console.log("Mongo user:", user);
@@ -36,17 +39,20 @@ export const authOptions = {
         return null;
       },
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
   ],
   callbacks: {
-    async session({ session, token,}) {
-
+    async session({ session, token }) {
       if (token) {
         session.user.username = token.username;
         session.user.role = token.role;
       }
       return session;
     },
-    async jwt({ token, user,  }) {
+    async jwt({ token, user }) {
       if (user) {
         token.username = user.username;
         token.role = user.role;
